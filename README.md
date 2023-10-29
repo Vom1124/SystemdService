@@ -55,3 +55,5 @@ Replace the "<startup.sh>" in example (I) with desired name and "<FileDirectory>
 
     ros2 launch yansa_vision_bringup vision.launch.py
     #ros2 run rgb_camera rgb_grab
+
+The ExecStart command in the example (II) requires "/bin/bash -lc" to ensure a self-contained login shell is used such that all other install modules and packages are available to the shell. 
