@@ -1,0 +1,13 @@
+[Unit]
+Description=Yansa Vision Startup Script
+#After=graphical.target
+
+[Service]
+WorkingDirectory=/home/vom
+#Environment="Home=root"
+#User=root
+ExecStart=/home/vom/yansa_vision_startup_script/vision_startup_launch.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
