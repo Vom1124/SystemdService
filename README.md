@@ -57,3 +57,22 @@ Replace the "<startup.sh>" in example (I) with desired name and "<FileDirectory>
     #ros2 run rgb_camera rgb_grab
 
 The ExecStart command in the example (II) requires "/bin/bash -lc" to ensure a self-contained login shell is used such that all other install modules and packages are available to the shell. 
+
+
+Once the Systemd service is created, following steps are then used to start at boot up.
+
+    systemctl --user daemon-reload
+    systemctl --user enable <filename>.service
+
+To start/stop the service, the following commands are used
+
+    systemctl --user start <filename>.service
+    systemctl --user stop <filename>.service
+
+If at all the service file is edited, make sure to disable the service first before enabling again. The order is critical.
+
+    systemctl --user disable <filename>.service
+    systemctl --user daemon-reload
+    systemctl --user enable <filename>.service
+
+
