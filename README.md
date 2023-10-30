@@ -75,5 +75,6 @@ If at all the service file is edited, make sure to disable the service first bef
     systemctl --user daemon-reload
     systemctl --user enable <filename>.service
 
-Example (II) is preferred over Example(I) for old systems (including but not limited to ROS2 OS), especially where the service needs to start after the GUI and user login is loaded. 
+Caveat:
+Example (II) is preferred over Example(I) for old systems (including but not limited to ROS2 OS), especially where the service needs to start after the GUI and user login is loaded. A best case scenario for this to occur is when OpenCv package is used to stream the camera within a node. This means that is the node starts before the GUI, then the stream won't display and save the stream exiting the service with partial error.
 
