@@ -75,4 +75,5 @@ If at all the service file is edited, make sure to disable the service first bef
     systemctl --user daemon-reload
     systemctl --user enable <filename>.service
 
+Example (II) is preferred over Example(I) for old systems (including but not limited to ROS2 OS), especially where the service needs to start after the GUI and user login is loaded. 
 
